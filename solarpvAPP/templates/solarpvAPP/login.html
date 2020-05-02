@@ -1,0 +1,49 @@
+<!-- 	Dexter King
+	IFT 598: Middleware Programming
+-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<!-- Start Head -->
+<head>
+	<meta charset="UTF-8">
+	<title>solarPV Login Portal</title>
+	<link rel="stylesheet" href="{% static 'solarpvAPP/style.css' %}">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<link rel="icon" type="image/png" href="{% static 'solarpvAPP/images/favicon.ico' %}">
+</head>
+<!-- End Head -->
+<!-- Start Body -->
+<body>
+        <img src="{% static 'solarpvAPP/images/logo.png' %}" style="height:150px; display: block; margin-left: auto; margin-right: auto; margin-bottom: -30px;" alt="" />
+        <h2 class="logo-header" style="text-align: center;"> Research & Development </h2>
+        <div class="header">
+        <h2> Please login below: </h2>
+        </div>
+        <form name="reg" class="form" style="margin-top: 3%;">
+                <table style="text-align: right;" align="center">
+			<tr>
+				<td>Username</td><td><input style="color: #D2D2D2" type="text" /> </td> </tr>
+			<tr> 
+				<td>Password</td><td><input style="color: #D2D2D2" type="text" /> </td> </tr>
+			<tr>
+				<td align="center"><input style="height: 30px; width:90px; background-color: #7A7A7A; color:#2DA8FA;" type="button" id ="sub" onclick="data()" value="Submit"/> </td>
+				<td align="center"><input style="height: 30px; width:90px; background-color: #7A7A7A; color:#2DA8FA;" type="button" value="Back" onclick="back()"/> </td> </tr>
+			</table>
+	</form>
+	<br />
+	<div id="footer"> 
+			<a href="#" style="padding: 2px;"> Site Map</a> | 
+			<a href="#" style="padding: 2px;"> Terms & Conditions</a> | 
+			<a href="#" style="padding: 2px;"> Privacy Policy</a> | 
+			<a href="#" style="padding: 2px;"> About</a>
+	</div>
+<script>
+        function back() {
+        $(document).ready(function(){
+        window.history.back();
+                });
+                 };
+</script>
+</body>
+</html>

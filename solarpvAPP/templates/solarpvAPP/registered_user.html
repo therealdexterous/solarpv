@@ -1,0 +1,142 @@
+<!-- 	Dexter King
+	IFT 598: Middleware Programming
+-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<!-- Start Head -->
+<head>
+	<meta charset="UTF-8">
+	<title>solarPV Registration</title>
+	<link rel="stylesheet" href="{% static 'solarpvAPP/style.css' %}">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<link rel="icon" type="image/png" href="{% static 'solarpvAPP/images/favicon.ico' %}">
+</head>
+<!-- End Head -->
+<!-- Start Body -->
+<body>
+	<img src="{% static 'solarpvAPP/images/logo.png' %}" style="height:150px; display: block; margin-left: auto; margin-right: auto; margin-bottom: -30px;" alt="" />
+	<h2 class="logo-header" style="text-align: center;"> Research & Development </h2>
+	<div class="header">
+	<h2> Please enter the following information: </h2>
+	</div>
+	<form class="form" style="margin-top: 3%;" method="POST">
+	{% csrf_token %}
+		<table style="text-align: right;" align="center">
+			<tr>
+			<td class="tag"> {{form.userID.label}}
+					 {{form.userID}} </td>
+			</tr>
+                        <td class="tag"> {{form.password.label}}
+                                         {{form.password}} </td>
+                        </tr>
+                        <td class="tag"> {{form.clientID.label}}
+                                         {{form.clientID}} </td>
+                        </tr>
+                        <td class="tag"> {{form.first_name.label}}
+                                         {{form.first_name}} </td>
+                        </tr>
+                        <td class="tag"> {{form.middle_name.label}}
+                                         {{form.middle_name}} </td>
+                        </tr>
+                        <td class="tag"> {{form.last_name.label}}
+                                         {{form.last_name}} </td>
+                        </tr>
+                        <td class="tag"> {{form.job_title.label}}
+                                         {{form.job_title}} </td>
+                        </tr>
+                        <td class="tag"> {{form.email_address.label}}
+                                         {{form.email_address}} </td>
+                        </tr>
+                        <td class="tag"> {{form.office_phone.label}}
+                                         {{form.office_phone}} </td>
+                        </tr>
+                        <td class="tag"> {{form.cell_phone.label}}
+                                         {{form.cell_phone}} </td>
+                        </tr>
+                        <td class="tag"> {{form.prefix.label}}
+                                         {{form.prefix}} </td>
+                        </tr>
+			<tr>
+			<td>
+			<input style="height: 30px; width:90px; background-color: #7A7A7A; color:#000;" type="submit" value="Submit">
+			<input style="height: 30px; width:90px; background-color: #7A7A7A; color:#000;" type="button" value="Back" onclick="back()"/>
+			</td>
+			</tr>
+			</table>
+	</form>
+<script>
+	function back() {
+	$(document).ready(function(){
+        window.history.back();
+        	});
+   		 };
+</script>
+<script>
+	function validate() {
+		var uname = document.forms["reg"]["uname"].value;
+			if (uname == "" || uname == null) {
+				alert("Please enter a username. Try again.");
+				return false;
+			}
+		var pass = document.forms["reg"]["pass"].value;
+			if (pass == "" || pass == null) {
+				alert("Please enter a password. Try again.");
+				return false;
+			}
+		var email = document.forms["reg"]["email"].value;
+			if (email == "" || email == null) {
+				alert("Please enter an email address. Try again.");
+				return false;
+			}
+		var fname = document.forms["reg"]["fname"].value;
+			if (fname == "" || fname == null) {
+				alert("Please enter a first name. Try again.");
+				return false;
+			}
+		var lname = document.forms["reg"]["lname"].value;
+			if (lname == "" || lname == null) {
+				alert("Please enter a last name. Try again.");
+				return false;
+			}
+		var sex = document.forms["reg"]["sex"].value;
+			if (sex == "" || sex == null) {
+				alert("Please enter a gender. Try again.");
+				return false;
+			}
+		var add = document.forms["reg"]["add"].value;
+			if (add == "" || add == null) {
+				alert("Please enter an address. Try again.");
+				return false;
+			}
+		var city = document.forms["reg"]["city"].value;
+			if (city == "" || city == null) {
+				alert("Please enter a city. Try again.");
+				return false;
+			}
+		var state = document.forms["reg"]["state"].value;
+			if (state == "" || state == null) {
+				alert("Please enter a state. Try again.");
+				return false;
+			}
+		var zip = document.forms["reg"]["zip"].value;
+			if (zip == "" || zip == null) {
+				alert("Please enter a zip code. Try again.");
+				return false;
+			}
+		var phone = document.forms["reg"]["phone"].value;
+			if (phone == "" || phone == null) {
+				alert("Please enter a phone number. Try again.");
+				return false;
+			}
+	}
+</script>
+	<br />
+	<div id="footer"> 
+			<a href="#" style="padding: 2px;"> Site Map</a> | 
+			<a href="#" style="padding: 2px;"> Terms & Conditions</a> | 
+			<a href="#" style="padding: 2px;"> Privacy Policy</a> | 
+			<a href="#" style="padding: 2px;"> About</a>
+	</div>
+</body>
+</html>

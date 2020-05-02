@@ -1,0 +1,85 @@
+<!-- 	Dexter King
+	IFT 598: Middleware Programming
+-->
+<html>
+{% load static %}
+{% block content %}
+<!-- Start Head -->
+<head>
+	<meta charset="UTF-8">
+	<title>solarPV Search</title>
+	<link rel="stylesheet" href="{% static 'solarpvAPP/style.css' %}">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<link rel="icon" type="image/png" href="{% static 'solarpvAPP/images/favicon.ico' %}">
+
+	<style>
+th {
+	padding: 2em;
+}
+
+td {
+	padding-right: 2em;
+	padding-left: 2em;
+	
+}
+	</style>
+</head>
+<!-- End Head -->
+<!-- Start Body -->
+
+<body>
+	<h2 style="margin-bottom: 5px"> Testing & Certification Search </h2>
+	<hr style="margin-bottom: 3em; color:#2DA8FA">
+
+        <h3> Filter Database </h3>
+        <form class="form" action="" method="GET" style="margin-bottom: 10px;">
+        <input style="height: 30px; width:90px; background-color: #7A7A7A; color:#2DA8FA;" type="submit" value="Submit" />
+        </form>
+
+	<table>
+	<tr>
+		<th>Certificate Number</th>
+		<th>User ID</th>
+		<th>Report Number</th>
+		<th>Issue Date</th>
+		<th>Standard ID</th>
+		<th>Location ID</th>
+		<th>Model Number</th>
+	</tr>
+        <tr>
+        <td colspan="7"><hr></td>
+        <tr>
+	{% for i in certs %}
+	<tr>
+		<td>{{i.Certificate_Number}}</td>
+		<td>{{i.User_ID}}</td>
+		<td>{{i.Report_Number}}</td>
+		<td>{{i.Issue_Date}}</td>
+		<td>{{i.Standard_ID}}</td>
+		<td>{{i.Location_ID}}</td>
+		<td>{{i.Model_Number}}</td>
+		
+	</tr>
+	{% endfor %}
+	<tr>
+	<td></td>
+	</tr>
+	<tr>
+	<td colspan="7"><hr></td>
+	<tr>
+	<tr>
+		<td>Total:       {{certcount}}</td>
+	</tr>
+	</table>
+	<br />
+	<br />
+	<br />
+	<div id="footer"> 
+			<a href="#" style="padding: 2px;"> Site Map</a> | 
+			<a href="#" style="padding: 2px;"> Terms & Conditions</a> | 
+			<a href="#" style="padding: 2px;"> Privacy Policy</a> | 
+			<a href="#" style="padding: 2px;"> About</a>
+	</div>
+</body>
+</html>
+{% endblock content %}

@@ -1,0 +1,145 @@
+<!-- 	Dexter King
+	IFT 598: Middleware Programming
+-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<!-- Start Head -->
+<head>
+	<meta charset="UTF-8">
+	<title>solarPV</title>
+	<link rel="stylesheet" href="{% static 'solarpvAPP/style.css' %}">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<link rel="icon" type="image/png" href="{% static 'solarpvAPP/images/favicon.ico' %}">
+<style>
+button {
+        height: 50px;
+        width: 150px;
+        background-color: #7A7A7A;
+        color:#2DA8FA;
+        margin-bottom: 20px;
+	margin-left: 24%;
+	margin-right: 24%;
+}
+
+</style>
+</head>
+<!-- End Head -->
+<!-- Start Body -->
+<body>
+	<table class="main">
+		<tr>
+			<td align="right" style="padding-right: 150px;" colspan="2">
+				<img src="{% static 'solarpvAPP/images/logo.png' %}" style="height:150px; margin-bottom: -40px;">
+				<h2 class="logo-header" style="margin-right: -16px;"> Research & Development </h2>
+			</td>
+			<td class="header-right" style="margin-left: -20px;"> 
+				<a href="mailto:info@solarpv.com" style="padding: 5px;"> Contact </a> 
+				<a href="#" style="padding: 5px;"> About Us </a>
+				<a href="#" style="padding: 5px;"> Social Media </a>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="text-align: right; border-right: 1px;">
+				<div id="login">
+				<a class="flag" href="{% url 'reg' %}" style="padding: 3px;">Register</a> |
+				<a class="flag" href="{% url 'login' %}" style="padding: 3px;"> Login </a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td style="height: 20px; text-align: center; border: 1px; border-style: solid;" colspan="3"> 
+			<a href="#" style="padding: 2px; font-weight: bold; margin: 30px;"> Racks & Trackers </a>
+			<a href="#" style="padding: 2px; font-weight: bold; margin: 30px"> PV Module </a>
+			<a href="#" style="padding: 2px; font-weight: bold; margin: 30px"> PV Systems Data </a> 
+			<a href="#" style="padding: 2px; font-weight: bold; margin: 30px"> Analytics </a>
+			<a href="#" style="padding: 2px; font-weight: bold; margin: 30px"> Cybersecurity </a>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-color: #000000; border: 1px; border-style: solid; padding-left: 5%;"> 
+			<button id="api" class="flag">Click to use the REST API</button>
+			<h3 style="padding-left: 15px;"> PV Module </h3>
+				<ul> 
+					<li><a href="{% url 'search' %}" class="flag"> Testing & Certification </a></li>
+					<li> PV Rating </li>
+				</ul>
+				<h3 style="padding-left: 15px;"> PV System & Performance </h3>
+				<ul>
+					<li> Monitoring & Inspection </li>
+					<li> Performance Analysis </li>
+					<li> Compare System </li>
+					<li> Certification </li>
+				</ul>
+				<h3 style="padding-left: 15px;"> Data Analytics </h3>
+				<ul>
+					<li> Module Lifetime Prediction </li>
+					<li> Energy Prediction </li>
+				</ul>
+				<h3 style="padding-left: 15px;"> Cybersecurity and Smart Grid Technologies </h3>
+				<ul>
+				</ul>
+				<h3 style="padding-left: 15px;"> Solar PV University </h3>
+				<ul>
+				</ul>
+			</td>
+			<td style="border: 1px; border-style: solid;"> 
+					<figure class="gallery">
+					<img class="image-small" src="{% static 'solarpvAPP/images/hydro.png' %}">
+					<img class="image-small" src="{% static 'solarpvAPP/images/solar.jpg' %}">
+					<img class="image-small" src="{% static 'solarpvAPP/images/wind.jpg' %}">
+					</figure>
+			</td>
+			<td style="text-align: center;"> 
+				<div data-elink="https://elink.io/embed/9f514a1">
+				</div>
+				<script async src="https://d1sf3a4rercrry.cloudfront.net/embed.js" charset="utf-8"></script>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border: 1px; border-style: solid; border-right: none;">
+				<div id="address"> 
+					<strong> solarPV </strong> <br />
+					999 Simpson lane <br />
+					999-888-7777 <br />
+					studentenergy.org
+				</div>
+			</td>
+			<td style="border: 1px; border-style: solid; border-left: none;">
+				<div style="text-align: right; vertical-align: top; padding-right: 5px;"> @ 2019 All Rights Reserved </div>
+			</td>
+		</tr>
+	</table>
+	<br />
+
+<script>
+    document.getElementById("api").onclick = function () {
+        location.href = "api";
+    };
+</script>
+
+<script>
+var num = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("image-small");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  num++;
+  if (num > x.length) {num = 1}    
+  x[num-1].style.display = "block";
+  setTimeout(carousel, 4000);
+}
+</script>
+
+	<div id="footer"> 
+			<a href="#" style="padding: 2px;"> Site Map</a> | 
+			<a href="#" style="padding: 2px;"> Terms & Conditions</a> | 
+			<a href="#" style="padding: 2px;"> Privacy Policy</a> | 
+			<a href="#" style="padding: 2px;"> About</a>
+	</div>
+</body>
+</html>

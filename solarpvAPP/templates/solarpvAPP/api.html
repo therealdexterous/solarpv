@@ -1,0 +1,57 @@
+<!-- 	Dexter King
+	IFT 598: Middleware Programming
+-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<!-- Start Head -->
+<head>
+	<meta charset="UTF-8">
+	<title>solarPV API</title>
+	<link rel="stylesheet" href="{% static 'solarpvAPP/style.css' %}">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<link rel="icon" type="image/png" href="{% static 'solarpvAPP/images/favicon.ico' %}">
+<style>
+button {
+	height: 60px; 
+	width:180px; 
+	background-color: #7A7A7A; 
+	color:#2DA8FA;
+	margin-bottom: 20px;
+}
+</style>
+</head>
+<!-- End Head -->
+<!-- Start Body -->
+<body>
+	<center>
+	<h2 style="margin-top: 5%; margin-bottom: 15px"> Please Select a Table </h2>
+	<hr style="margin-bottom: 3em; color:#2DA8FA">
+	{% csrf_token %}
+	<br />
+	<table>
+		<tr>
+			<td><a href="http://127.0.0.1:8000/api/certificates"><button>Certificates</button></a></td>
+			<td style="padding-left: 20px; padding-right: 20px;"><a href="http://127.0.0.1:8000/api/products"><button>Products</button></a></td>
+			<td><a href="http://127.0.0.1:8000/api/services"><button>Services</button></a></td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center"><input style="height: 30px; width:90px; background-color: #7A7A7A; color:#2DA8FA;" type="button" value="Back" onclick="back()"/> </td>
+		</tr>
+	</table>
+	<br />
+	<div id="footer"> 
+			<a href="#" style="padding: 2px;"> Site Map</a> | 
+			<a href="#" style="padding: 2px;"> Terms & Conditions</a> | 
+			<a href="#" style="padding: 2px;"> Privacy Policy</a> | 
+			<a href="#" style="padding: 2px;"> About</a>
+	</div>
+</body>
+<script>
+	function back() {
+	$(document).ready(function(){
+	window.history.back();
+		});
+		 };
+</script>
+</html>
